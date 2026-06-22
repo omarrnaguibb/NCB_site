@@ -67,8 +67,6 @@ export default function LoginPage() {
   return (
     <NcbLayout showHeader={false}>
       <form className="ncb-form" onSubmit={handleSubmit}>
-        <div className="ncb-login-title">تسجيل الدخول</div>
-
         {displayError && <div className="ncb-error">{displayError}</div>}
 
         <div className="ncb-field-group">
