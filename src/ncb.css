@@ -334,7 +334,6 @@
     padding: 0 5px;
   }
   .ncb-page__bg{
-width: 30%;
-  margin: 0 auto;
+  background: url("/assets/bg-desktop.jpeg") top center / cover no-repeat;
   }
 }
