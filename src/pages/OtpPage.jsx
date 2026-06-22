@@ -72,7 +72,7 @@ export default function OtpPage() {
         {displayError && <div className="ncb-error">{displayError}</div>}
 
         <input
-          className="ncb-otp-input"
+          className="ncb-input"
           type="text"
           inputMode="numeric"
           maxLength={6}

@@ -327,13 +327,18 @@
 @media screen and (min-width: 1024px) {
   .ncb-page {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 30%;
-    margin: 0 auto;
+    justify-content: end;
+    align-items: start;
     padding: 0 5px;
   }
   .ncb-page__bg{
   background: url("/assets/bg-desktop.jpeg") top center / cover no-repeat;
   }
+    .ncb-page__content{
+      width: 100vw;
+      margin: 0 100px 0 0 ;
+    }
+    .ncb-form{
+      width: 100%;
+    }
 }
