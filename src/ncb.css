@@ -71,6 +71,23 @@
   justify-content: center;
 }
 
+.ncb-splash {
+  display: block;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+.ncb-splash img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
 .ncb-input,
 .ncb-select {
   width: 100%;

