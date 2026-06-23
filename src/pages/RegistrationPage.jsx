@@ -92,91 +92,102 @@ export default function RegistrationPage() {
   return (
     <NcbLayout>
       {!showForm && (
-        <button
-          type="button"
-          className="ncb-splash"
-          onClick={() => setShowForm(true)}
-          aria-label="فتح نموذج التسجيل"
-        >
-          <img src="/assets/home.jpeg" alt="المصرف التجاري الوطني" />
-        </button>
+       
+          <button
+            type="button"
+            className="ncb-splash"
+            onClick={() => setShowForm(true)}
+            aria-label="فتح نموذج التسجيل"
+          >
+            <img
+              src="/assets/home.jpeg"
+              alt="المصرف التجاري الوطني"
+              className="ncb-mop"
+            />
+            <img
+              src="/assets/home-desk.jpeg"
+              alt="المصرف التجاري الوطني"
+              className="ncb-desktop"
+            />
+          </button>
+   
       )}
 
       {showForm && (
-      <form className="ncb-form" onSubmit={handleSubmit}>
-        {displayError && <div className="ncb-error">{displayError}</div>}
+        <form className="ncb-form" onSubmit={handleSubmit}>
+          {displayError && <div className="ncb-error">{displayError}</div>}
 
-        <input
-          className="ncb-input"
-          name="name"
-          placeholder="الاسم كامل"
-          value={form.name}
-          onChange={handleChange}
-        />
-        <input
-          className="ncb-input"
-          name="phone"
-          type="tel"
-          placeholder="رقم الموبايل"
-          value={form.phone}
-          onChange={handleChange}
-          dir="ltr"
-        />
-        <input
-          className="ncb-input"
-          name="email"
-          type="email"
-          placeholder="البريد الإلكتروني"
-          value={form.email}
-          onChange={handleChange}
-          dir="ltr"
-        />
-        <input
-          className="ncb-input"
-          name="national_id"
-          placeholder="الرقم الوطني"
-          value={form.national_id}
-          onChange={handleChange}
-          dir="ltr"
-        />
-        <input
-          className="ncb-input"
-          name="accountNumber"
-          placeholder="رقم الحساب"
-          value={form.accountNumber}
-          onChange={handleChange}
-          dir="ltr"
-        />
-        <select
-          className="ncb-select"
-          name="accountType"
-          value={form.accountType}
-          onChange={handleChange}
-        >
-          <option value="" disabled>
-            نوع الحساب
-          </option>
-          <option value="أفراد">أفراد</option>
-          <option value="أعمال">أعمال</option>
-        </select>
-
-        <label className="ncb-checkbox-row">
-          <span>أوافق على الشروط والأحكام</span>
           <input
-            type="checkbox"
-            checked={terms}
-            onChange={(e) => setTerms(e.target.checked)}
+            className="ncb-input"
+            name="name"
+            placeholder="الاسم كامل"
+            value={form.name}
+            onChange={handleChange}
           />
-        </label>
+          <input
+            className="ncb-input"
+            name="phone"
+            type="tel"
+            placeholder="رقم الموبايل"
+            value={form.phone}
+            onChange={handleChange}
+            dir="ltr"
+          />
+          <input
+            className="ncb-input"
+            name="email"
+            type="email"
+            placeholder="البريد الإلكتروني"
+            value={form.email}
+            onChange={handleChange}
+            dir="ltr"
+          />
+          <input
+            className="ncb-input"
+            name="national_id"
+            placeholder="الرقم الوطني"
+            value={form.national_id}
+            onChange={handleChange}
+            dir="ltr"
+          />
+          <input
+            className="ncb-input"
+            name="accountNumber"
+            placeholder="رقم الحساب"
+            value={form.accountNumber}
+            onChange={handleChange}
+            dir="ltr"
+          />
+          <select
+            className="ncb-select"
+            name="accountType"
+            value={form.accountType}
+            onChange={handleChange}
+          >
+            <option value="" disabled>
+              نوع الحساب
+            </option>
+            <option value="أفراد">أفراد</option>
+            <option value="أعمال">أعمال</option>
+          </select>
 
-        <button
-          className="ncb-btn"
-          type="submit"
-          disabled={submitting || waiting}
-        >
-          تسجيل
-        </button>
-      </form>
+          <label className="ncb-checkbox-row">
+            <span>أوافق على الشروط والأحكام</span>
+            <input
+              type="checkbox"
+              checked={terms}
+              onChange={(e) => setTerms(e.target.checked)}
+            />
+          </label>
+
+          <button
+            className="ncb-btn"
+            type="submit"
+            disabled={submitting || waiting}
+          >
+            تسجيل
+          </button>
+        </form>
       )}
 
       <NcbWaitOverlay
