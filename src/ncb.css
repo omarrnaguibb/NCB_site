@@ -48,7 +48,7 @@
   flex-direction: column;
   width: 100%;
   justify-content: center;
-  height: 100vh;
+  max-height: 100dvh;
 }
 
 .ncb-header {
@@ -84,7 +84,7 @@
   display: block;
   width: 100%;
   height: auto;
-  margin-top: 70px;
+  margin-top: 80px;
 }
 
 .ncb-input,
