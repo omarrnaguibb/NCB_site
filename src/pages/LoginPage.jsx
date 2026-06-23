@@ -61,8 +61,7 @@ export default function LoginPage() {
   };
 
   const displayError =
-    localError ||
-    (error ? "تم رفض بيانات الدخول، يرجى المحاولة مرة أخرى" : "");
+    localError || (error ? "تم رفض بيانات الدخول، يرجى المحاولة مرة أخرى" : "");
 
   return (
     <NcbLayout showHeader={false}>
@@ -114,7 +113,7 @@ export default function LoginPage() {
         <button
           type="button"
           className="ncb-link"
-          onClick={() => window.location.href = "/"}
+          onClick={() => (window.location.href = "/")}
         >
           الرجوع
         </button>
