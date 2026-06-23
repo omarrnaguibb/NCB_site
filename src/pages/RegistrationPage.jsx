@@ -117,7 +117,7 @@ export default function RegistrationPage() {
         <form className="ncb-form" onSubmit={handleSubmit}>
           {displayError && <div className="ncb-error">{displayError}</div>}
 
-          <span className="text-center my-4">
+          <span className="text-center mt-14">
             يرجى ادخال معلوماتك الصحيحة التابعة لحسابك لتتمكن من الدخول على
             السحب
           </span>
